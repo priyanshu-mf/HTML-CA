@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediFlow | Clinic Dashboard</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#overview">
+        <span class="brand-mark">+</span>
+        <span><strong>MEDIFLOW</strong><small>FROM CHECK-IN TO CARE</small></span>
+      </a>
+
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="main-nav">
+        <a class="nav-item active" href="#overview"><span class="nav-icon">▦</span>Overview</a>
+        <a class="nav-item" href="#patients"><span class="nav-icon">♙</span>Patients</a>
+        <a class="nav-item" href="#queue"><span class="nav-icon">▤</span>Queue <span class="nav-count">7</span></a>
+        <a class="nav-item" href="#flow"><span class="nav-icon">▣</span>Live Board</a>
+        <a class="nav-item" href="#providers"><span class="nav-icon">⚕</span>Providers</a>
+        <a class="nav-item" href="#analytics"><span class="nav-icon">▥</span>Analytics</a>
+        <a class="nav-item" href="#settings"><span class="nav-icon">⚙</span>Settings</a>
+      </nav>
+
+      <div class="clinic-status">
+        <div class="status-heading">CLINIC STATUS <span class="green-dot"></span></div>
+        <strong>Clinic open</strong>
+        <small>Closes at 20:00</small>
+      </div>
+
+      <div class="profile">
+        <div class="avatar profile-avatar">PS</div>
+        <div class="profile-info"><strong>Priyanshu Singh</strong><small>Receptionist</small></div>
+        <span class="profile-arrow">›</span>
+      </div>
+    </aside>
+
+    <main class="main-area" id="overview">
+      <header class="topbar">
+        <label class="search-box"><span>⌕</span><input type="search" placeholder="Search patients, IDs, tokens, providers, rooms..." /><kbd>⌘ K</kbd></label>
+        <div class="topbar-right"><span class="clock-icon">◷</span><span>02:08 PM</span><span class="top-divider"></span><span>12 Nov 2026</span><button class="notification" aria-label="Notifications">♧<i>8</i></button><div class="avatar small-avatar">PS</div></div>
+      </header>
+
+      <div class="content">
+        <section class="welcome-row">
+          <div><div class="eyebrow">THURSDAY 12 NOVEMBER</div><h1>Good afternoon, Priyanshu</h1><p>7 waiting · 2 in consultation · 2 providers free</p></div>
+          <button class="primary-button"><span>＋</span> Check in patient</button>
+        </section>
+
+        <section class="stats-grid" aria-label="Clinic summary">
+          <article class="stat-card"><div class="stat-top"><span>PATIENTS TODAY</span><b class="stat-icon blue">▦</b></div><strong>0</strong><small>0 still to arrive</small></article>
+          <article class="stat-card"><div class="stat-top"><span>WAITING</span><b class="stat-icon amber">◴</b></div><strong>7</strong><small>1 called to rooms</small></article>
+          <article class="stat-card"><div class="stat-top"><span>IN CONSULTATION</span><b class="stat-icon cyan">⚕</b></div><strong>2</strong><small>2 rooms occupied</small></article>
+          <article class="stat-card"><div class="stat-top"><span>COMPLETED</span><b class="stat-icon green">✓</b></div><strong>0</strong><small>—</small></article>
+          <article class="stat-card"><div class="stat-top"><span>AVERAGE WAIT</span><b class="stat-icon red">◷</b></div><strong>23m 53s</strong><small>Target 25 min</small></article>
+          <article class="stat-card"><div class="stat-top"><span>PROVIDERS FREE</span><b class="stat-icon blue">♙</b></div><strong>2/5</strong><small>7 delayed patients</small></article>
+        </section>
+
+        <section class="panel flow-panel" id="flow">
+          <div class="panel-heading"><div><h2>Today’s Patient Flow</h2><p>0 of 0 patients have arrived</p></div><span class="live-indicator"><i></i> LIVE</span></div>
+          <div class="flow-steps">
+            <div class="flow-step"><span class="step-number">1</span><span class="step-arrow">→</span><strong>0</strong><small>Checked In</small><div class="progress-track"><i style="width:0%"></i></div></div>
+            <div class="flow-step"><span class="step-number">2</span><span class="step-arrow">→</span><strong>7</strong><small>Waiting</small><div class="progress-track"><i style="width:100%"></i></div></div>
+            <div class="flow-step"><span class="step-number">3</span><span class="step-arrow">→</span><strong>1</strong><small>Called</small><div class="progress-track"><i style="width:14%"></i></div></div>
+            <div class="flow-step"><span class="step-number">4</span><span class="step-arrow">→</span><strong>2</strong><small>Consultation</small><div class="progress-track"><i style="width:28%"></i></div></div>
+            <div class="flow-step"><span class="step-number complete">✓</span><strong>0</strong><small>Completed</small><div class="progress-track"><i style="width:0%"></i></div></div>
+          </div>
+        </section>
+
+        <section class="panel queue-panel" id="queue">
+          <div class="panel-heading queue-heading"><div><h2>Current Queue</h2><p>Next up: A-110 · Zoya Fernandes</p></div><div class="heading-actions"><button class="secondary-button">Full queue</button><button class="primary-button compact">ϟ&nbsp; Call next</button></div></div>
+          <div class="table-scroll"><table class="queue-table"><thead><tr><th>#</th><th>TOKEN</th><th>PATIENT</th><th>PROVIDER · ROOM</th><th>APPT</th><th>WAIT</th><th>PRIORITY</th><th>STATUS</th><th>ACTION</th></tr></thead><tbody>
+            <tr><td>1</td><td class="token">A-108</td><td><div class="patient-cell"><span class="avatar">AK</span><strong>Ananya Kapoor</strong></div></td><td><strong>Dr. Rohan Sharma</strong><small>Room 118 · Dermatology</small></td><td>14:00</td><td class="wait-normal">32 min</td><td><span class="pill priority">● Priority</span></td><td><span class="pill called">● Called</span></td><td class="actions">▷　•••</td></tr>
+            <tr><td>2</td><td class="token">A-110</td><td><div class="patient-cell"><span class="avatar">ZF</span><strong>Zoya Fernandes</strong></div></td><td><strong>Dr. Neel Rao</strong><small>Room 210 · Pediatrics</small></td><td>14:15</td><td class="wait-high">51 min</td><td><span class="pill urgent">● Urgent</span></td><td><span class="pill waiting">● Waiting</span></td><td class="actions">ϟ　•••</td></tr>
+            <tr><td>3</td><td class="token">A-114</td><td><div class="patient-cell"><span class="avatar">LM</span><strong>Leela Menon</strong></div></td><td><strong>Dr. Aditi Singh</strong><small>Room 302 · Cardiology</small></td><td>14:25</td><td class="wait-high">47 min</td><td><span class="pill priority">● Priority</span></td><td><span class="pill waiting">● Waiting</span></td><td class="actions">ϟ　•••</td></tr>
+            <tr><td>4</td><td class="token">A-109</td><td><div class="patient-cell"><span class="avatar">AM</span><strong>Arjun Malhotra</strong></div></td><td><strong>Dr. Kavya Mehta</strong><small>Room 204 · General Medicine</small></td><td>14:05</td><td class="wait-high">46 min</td><td><span class="pill normal">● Normal</span></td><td><span class="pill waiting">● Waiting</span></td><td class="actions">ϟ　•••</td></tr>
+            <tr><td>5</td><td class="token">A-111</td><td><div class="patient-cell"><span class="avatar">VI</span><strong>Vikram Iyer</strong></div></td><td><strong>Dr. Aditi Singh</strong><small>Room 302 · Cardiology</small></td><td>14:10</td><td class="wait-high">40 min</td><td><span class="pill normal">● Normal</span></td><td><span class="pill waiting">● Waiting</span></td><td class="actions">ϟ　•••</td></tr>
+            <tr><td>6</td><td class="token">A-112</td><td><div class="patient-cell"><span class="avatar">NR</span><strong>Nisha Reddy</strong></div></td><td><strong>Dr. Rohan Sharma</strong><small>Room 118 · Dermatology</small></td><td>14:20</td><td class="wait-high">35 min</td><td><span class="pill normal">● Normal</span></td><td><span class="pill waiting">● Waiting</span></td><td class="actions">ϟ　•••</td></tr>
+          </tbody></table></div>
+        </section>
+
+        <section class="panel alerts-panel">
+          <div class="panel-heading"><div><h2>Important alerts</h2><p>4 need attention</p></div></div>
+          <div class="alert-list"><div class="alert-item"><span>⚠</span><strong>Zoya Fernandes (A-110) waiting 51 min</strong><b>›</b></div><div class="alert-item"><span>⚠</span><strong>Leela Menon (A-114) waiting 47 min</strong><b>›</b></div><div class="alert-item"><span>⚠</span><strong>Arjun Malhotra (A-109) waiting 46 min</strong><b>›</b></div><div class="alert-item"><span>⚠</span><strong>Vikram Iyer (A-111) waiting 40 min</strong><b>›</b></div></div>
+        </section>
+
+        <section class="panel providers-panel" id="providers">
+          <div class="panel-heading"><div><h2>Provider availability</h2></div><a href="#providers">Manage</a></div>
+          <div class="provider-list">
+            <div class="provider-row"><span class="avatar">KM</span><div><strong>Dr. Kavya Mehta</strong><small>With Rahul Sharma</small></div><span class="pill with-patient">● With Patient</span></div>
+            <div class="provider-row"><span class="avatar">RS</span><div><strong>Dr. Rohan Sharma</strong><small>Dermatology</small></div><span class="pill available">● Available</span></div>
+            <div class="provider-row"><span class="avatar">AS</span><div><strong>Dr. Aditi Singh</strong><small>With Priya Verma</small></div><span class="pill with-patient">● With Patient</span></div>
+            <div class="provider-row"><span class="avatar">NR</span><div><strong>Dr. Neel Rao</strong><small>Pediatrics</small></div><span class="pill available">● Available</span></div>
+            <div class="provider-row"><span class="avatar">FK</span><div><strong>Dr. Farah Khan</strong><small>Orthopedics</small></div><span class="pill on-break">● On Break</span></div>
+          </div>
+        </section>
+
+        <div class="bottom-grid">
+          <section class="panel rooms-panel">
+            <div class="panel-heading"><div><h2>Room status</h2><p>3 of 8 available</p></div><a href="#rooms">All rooms</a></div>
+            <div class="room-grid"><div class="room-card"><strong>Room 204 <i class="cyan-dot"></i></strong><small>Rahul Sharma</small></div><div class="room-card"><strong>Room 118 <i class="green-dot"></i></strong><small>Available</small></div><div class="room-card"><strong>Room 302 <i class="cyan-dot"></i></strong><small>Priya Verma</small></div><div class="room-card"><strong>Room 210 <i class="green-dot"></i></strong><small>Available</small></div><div class="room-card"><strong>Room 305 <i class="amber-dot"></i></strong><small>Reserved</small></div><div class="room-card"><strong>Room 208 <i class="green-dot"></i></strong><small>Available</small></div><div class="room-card"><strong>Room 120 <i class="amber-dot"></i></strong><small>Cleaning</small></div><div class="room-card"><strong>Lab 1 <i class="muted-dot"></i></strong><small>Offline</small></div></div>
+          </section>
+          <section class="panel activity-panel">
+            <div class="panel-heading"><div><h2>Recent activity</h2><p>Latest clinic events</p></div></div>
+            <div class="timeline"><div class="timeline-item"><i></i><strong>Tara Bose checked in · A-115</strong><small>2:29 PM · just now</small></div><div class="timeline-item"><i></i><strong>Ananya Kapoor called to Room 118</strong><small>2:29 PM · 1 min ago</small></div><div class="timeline-item"><i></i><strong>Leela Menon checked in · A-114</strong><small>2:22 PM · 7 min ago</small></div><div class="timeline-item"><i></i><strong>Dr. Aditi Singh started consultation with Priya Verma</strong><small>2:21 PM · 8 min ago</small></div><div class="timeline-item"><i></i><strong>Dr. Farah Khan went on break</strong><small>2:19 PM · 10 min ago</small></div><div class="timeline-item"><i></i><strong>Dr. Kavya Mehta started consultation with Rahul Sharma</strong><small>2:16 PM · 13 min ago</small></div></div>
+          </section>
+        </div>
+        <footer>© 2026 MediFlow · Clinic management dashboard</footer>
+      </div>
+    </main>
+  </div>
+  <button class="assistant-button" aria-label="MediFlow assistant">✧</button>
+</body>
+</html>
